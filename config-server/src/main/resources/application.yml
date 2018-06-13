@@ -1,0 +1,26 @@
+---
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          searchPaths: respo
+          uri: https://github.com/huanshare/SpringCloudConfig/
+      label: master
+  application:
+    name: config-server
+  rabbitmq:
+      host: 10.0.20.131
+      port: 5672
+      username: test
+      password: test
+server:
+  port: 8026
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8011/eureka/
+management:
+  security:
+    enabled: false
