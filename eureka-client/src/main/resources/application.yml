@@ -13,3 +13,5 @@ server:
 spring:
   application:
     name: service-hi
+  zipkin:
+    base-url: http://localhost:8041

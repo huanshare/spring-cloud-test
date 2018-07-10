@@ -16,6 +16,7 @@
         <module>config-server</module>
         <module>config-client</module>
         <module>stream-rabbitmq</module>
+        <module>zipkin-server</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
