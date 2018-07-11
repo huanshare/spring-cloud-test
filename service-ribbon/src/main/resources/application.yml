@@ -7,5 +7,10 @@ server:
 spring:
   application:
     name: service-ribbon
-  zipkin:
-    base-url: http://localhost:8041
+#  zipkin:
+#    base-url: http://localhost:8041
+  rabbitmq:
+    host: 10.0.20.131
+    port: 5672
+    username: test
+    password: test

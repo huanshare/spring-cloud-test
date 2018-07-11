@@ -13,5 +13,10 @@ server:
 spring:
   application:
     name: service-hi
-  zipkin:
-    base-url: http://localhost:8041
+  rabbitmq:
+    host: 10.0.20.132
+    port: 5672
+    username: test
+    password: test
+#  zipkin:
+#   base-url: http://localhost:8041

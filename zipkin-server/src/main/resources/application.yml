@@ -7,3 +7,8 @@ server:
 spring:
   application:
     name: zipkin-server
+  rabbitmq:
+    host: 10.0.20.131
+    port: 5672
+    username: test
+    password: test
