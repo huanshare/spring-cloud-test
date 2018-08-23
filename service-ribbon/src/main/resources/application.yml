@@ -14,3 +14,11 @@ spring:
     port: 5672
     username: test
     password: test
+---
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 2000
