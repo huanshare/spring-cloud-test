@@ -14,3 +14,18 @@ spring:
     port: 5672
     username: test
     password: test
+
+
+feign:
+  hystrix:
+    enabled: true
+ribbon:
+  ReadTimeout:  30000
+  ConnectTimeout:  15000
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 10000

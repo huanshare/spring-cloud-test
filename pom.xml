@@ -18,6 +18,7 @@
         <module>stream-rabbitmq</module>
         <module>zipkin-server</module>
         <module>hystrix-dashboard</module>
+        <module>hystrix-turbine</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
