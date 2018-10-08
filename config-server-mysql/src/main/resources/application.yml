@@ -1,0 +1,36 @@
+---
+spring:
+  profiles:
+    active: jdbc
+  cloud:
+    config:
+      server:
+        jdbc:
+          sql: select property_key,property_value from properties where application=? and profile=? and label=?
+  datasource:
+    password: '{cipher}AQAj9T9fm5vXOR6EIAxcB6pnpHVzm7pmqUVAIYbSHwbzoHont2Lmu0akqTxxLPZiwQXxFA3ZeV1+nGXR5WB+Lit4OTEILkMotx83nOfScHjsC/zan0MALSdesRLiDE/o+sjYM4+hi51nrXgFSiHmadMMmengsh6h1NXG/AC3QaxNwLyjzEEkhbHN0e/13EUbUBOsofYw2pU6atdV34pzHO28WMoBz/WiwHmSxy+hDBGaz3K1GRWoJPOEu0DiMx9KuZgVS57BgbSNTyr3kdZppJGxqSfBCJZBMc7DdR/3Xkm8kQijPXbskaAN1DZMa/nlADFvnrzy5QdxXxt62QvfIQWPb9jBQZmz2IaJGny9mIRXLwsn5PS320ePWYxgEQPkOkQ='
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/spring_cloud?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    username: root
+  jpa:
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: update
+  application:
+    name: config-server-mysql
+  rabbitmq:
+      host: 10.0.20.131
+      port: 5672
+      username: test
+      password: test
+server:
+  port: 8028
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8011/eureka/
+management:
+  security:
+    enabled: false

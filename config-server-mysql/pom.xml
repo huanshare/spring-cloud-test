@@ -4,19 +4,19 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.huanshare</groupId>
-    <artifactId>config-client</artifactId>
+    <artifactId>config-server-mysql</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>config-client</name>
+    <name>config-server-mysql</name>
     <description>Demo project for Spring Boot</description>
 
     <parent>
+        <artifactId>spring-boot-2.0.1</artifactId>
         <groupId>com.huanshare</groupId>
-        <artifactId>spring-cloud-test</artifactId>
         <version>1.0-SNAPSHOT</version>
+        <relativePath>../spring-boot-version/2.0.1/pom.xml</relativePath>
     </parent>
-
     <dependencies>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -24,12 +24,11 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-config-client</artifactId>
+            <artifactId>spring-cloud-config-server</artifactId>
         </dependency>
-        <!--监控+refresh配置-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-actuator</artifactId>
+            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -37,7 +36,16 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jdbc</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -45,19 +53,6 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-dependencies</artifactId>
-                <version>${spring-cloud.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
-
     <build>
         <plugins>
             <plugin>
